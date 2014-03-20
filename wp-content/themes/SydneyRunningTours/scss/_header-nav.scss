@@ -1,0 +1,191 @@
+header {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: $lime-green;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  border-bottom: 10px solid $darker-green;
+  nav {
+  	height: $header-height;
+  	width: 80%;
+    @media only screen and (max-width: 1024px) {
+      width: 100%;
+      padding-left: 2%;
+    }
+  	margin: 0 auto;
+  	ul.mobile-menu {
+      @include clearfix;
+  		display: block;
+  		float: left;
+      @media only screen and (max-width:830px) {
+        width: 100%;
+      }
+      li.logo {
+        float: left;
+  			img {
+  			height: 100%;
+  			}
+  		}
+  		li.menu-icon {
+  			display: none;
+        float: right;
+        text-align: center;
+        color: $darker-green;
+        height: 100%;
+        width: 85px;
+        &:hover, &:active, &.active {
+          background-color: $darker-green;
+          color: #fff;
+        }
+        @media only screen and (max-width:830px) {
+          display: block;
+        }
+        span {
+          line-height: $header-height;
+          font-size: 3em;
+        }
+        
+  		}
+  		
+  	}
+  	section.full-menu {
+  		height: $header-height;
+  		display: block;
+  		float:right;
+  		ul {
+  			position: relative;
+			display: inline-table;
+			@include clearfix;
+  			li {
+  				float: left;
+          background-color: $lime-green;
+  				border-left: 1px solid $secondary-green;
+  				line-height: $header-height;
+  				height: $header-height;
+  				padding: 0 0.4em;
+  				&#fb-icon:hover {
+  					background-color: inherit;
+  				}
+  				&:hover, &:active {
+  					background-color: $darker-green;
+  					& a {
+  						color: #fff;
+  					}
+  					& ul li:hover a {
+  						color: #fff;
+  					}
+  					& ul li a {
+  						color: $darker-green;
+  					}
+  				}
+  				a {
+  					color: $darker-green;
+  					text-decoration: none;
+  					text-transform: uppercase;
+  					font-family: 'din-black';
+					 font-size: 1.125rem;
+					display: block;
+  				}
+  				ul {
+  					display: none;
+  					position: absolute; 
+  					top: 100%;
+  					li {
+  						float: none;
+  						height: auto;
+  						line-height: 45px;
+  						background-color: $lime-green;
+  						border-top: 1px solid $secondary-green;
+  						border-bottom: 1px solid $secondary-green;
+  						position: relative;
+  						a {
+  							color: $darker-green;
+  						}
+						}
+  				}
+  				&:hover > ul {
+  					display: block;
+  				}
+    			@media only screen and (max-width: 830px) {
+            float: none;
+            width: 250px;
+            border: 0;
+            height: auto;
+            line-height: 45px;
+            padding: 0 0.4em;
+            border-top: 1px solid $secondary-green;
+            border-bottom: 1px solid $secondary-green;
+            > ul {
+              display: block;
+              line-height: 45px;
+              text-indent: 30px;
+              position: static;
+              list-style: inside;
+              width: 250px;
+              > li {
+                padding: 0;
+                width: 250px;
+                position: static;
+                border: none;
+                color: $darker-green;
+                list-style-type: circle;
+                a {
+                  color: $darker-green;
+                }
+              }
+            }
+            &:hover, &:active {
+              border-color: $darker-green;
+            }
+          }
+        }
+  			.facebook-icon, .tripadvisor-social-icon {
+				background-position: 0px -60px;
+				width: 60px;
+				height: 60px;
+				margin: 10px 0 0 5px;
+				float: left;
+				@include transform (all .2s ease-out);
+				opacity: 0.6;
+				&:hover, &:active {
+					background-position: 0px 0px;
+					opacity: 1.0;
+					}
+				}
+  			.facebook-icon {
+				background: url(http://localhost/WPSydneyRunningTours/wp-content/uploads/2014/02/fb-icon.png) no-repeat;
+				}
+			.tripadvisor-social-icon {
+				background: url(http://localhost/WPSydneyRunningTours/wp-content/uploads/2014/02/tripadvisor-social-icon.png) no-repeat;
+			}
+  		}
+      @media only screen and (max-width:830px) {
+        position: fixed;
+        display: block;
+        width: 250px;
+        height: 100%;
+        background-color: $lime-green;
+        text-align: left;
+        padding-right: 0.3em;
+        right: -250px;
+        top: 85px;
+        border-left: 10px solid $darker-green;
+        @include transition(all 0.3s ease);
+        ul > li > ul {
+          display: block;
+          position: static;
+          border: none;
+
+        }
+        &.open {
+        right: 0;
+        }
+
+      }
+  	}
+  }
+}
+
