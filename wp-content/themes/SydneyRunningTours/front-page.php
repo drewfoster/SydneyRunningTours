@@ -108,7 +108,25 @@
 <!-- PRESS SECTION -->
 <section class="parallax-bg" data-type="background" data-speed="10" id="press">
     <div class="wrap">
-        <?php the_field('press_section'); ?>
+        <h3><?php the_field('press_section'); ?></h3>
+        <?php 
+            $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => 1,
+        );
+
+        $the_query = new WP_Query( $args );
+        ?>
+        <div>
+            <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+    
+            <?php get_template_part('content', 'post'); ?>
+    
+            <?php endwhile; endif;?>
+            <?php wp_reset_query(); ?>
+        </div>
+        <div><?php the_field( 'press_content_1' ); ?></div>
+        <div><?php the_field( 'press_section_2' ); ?></div>
     </div>
 </section>
 
