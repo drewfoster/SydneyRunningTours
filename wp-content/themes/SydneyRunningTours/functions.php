@@ -10,13 +10,11 @@ function theme_js() {
 	if (is_page('locations')) {
 		wp_enqueue_script( 'maps_js', get_template_directory_uri() . '/js/maps.js', array('jquery'), '', true );
 	}
-	if (wp_is_mobile() == false) {
-		wp_register_script( 'flexslider', get_template_directory_uri() . '/js/flexslider.js', array('jquery'), '', true );
-		if( is_front_page() ) {
-			wp_enqueue_script( 'flexslider' );
-		}
-		wp_enqueue_script( 'theme_js', get_template_directory_uri() . '/js/theme.js', array('jquery'), '', true );
+	wp_register_script( 'flexslider', get_template_directory_uri() . '/js/flexslider.js', array('jquery'), '', true );
+	if( is_front_page() ) {
+		wp_enqueue_script( 'flexslider' );
 	}
+	wp_enqueue_script( 'theme_js', get_template_directory_uri() . '/js/theme.js', array('jquery'), '', true );
 }
 add_action( 'wp_enqueue_scripts', 'theme_js' );
 // Enable custom menus

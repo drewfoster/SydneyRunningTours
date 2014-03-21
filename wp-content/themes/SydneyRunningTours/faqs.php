@@ -18,7 +18,7 @@ get_header(); ?>
 
 	<h1>Frequently Asked Questions</h1>
 
-	<dl>
+	<dl class="accordion">
 
 		<?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 

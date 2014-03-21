@@ -10,9 +10,11 @@
 	<link rel="shortcut icon" href="http://localhost/WPSydneyRunningTours/wp-content/uploads/2014/03/favicon.png" type="image/x-icon" />
 	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
 	<?php wp_head(); ?>
-	<script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANBOp0nle1Ud7D4DtQFW8KRDhX107gy5Y&sensor=false">
-    </script>
+	<?php if(is_front_page() || is_page('Locations')) : ?>
+		<script type="text/javascript"
+	      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANBOp0nle1Ud7D4DtQFW8KRDhX107gy5Y&sensor=false">
+	    </script>
+	<?php endif;?>
 </head>
 <body>
 	<?php if( is_front_page() || is_home() ): ?>

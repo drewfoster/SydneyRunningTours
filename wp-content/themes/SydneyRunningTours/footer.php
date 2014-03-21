@@ -1,6 +1,6 @@
 
-</div> <?php /* close main-wrapper div from header.php */?>
-<footer>
+</div> <!-- close main-wrapper div from header.php -->
+<footer id="contact">
 	<div class="footerBox">
 	<?php $footer = 29; ?>
 		<div class="col colLeft">
@@ -43,9 +43,11 @@
 	</div>
 
 </footer>
-<?php wp_footer() ;?>
-<script type="text/javascript">
-	google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+<?php wp_footer(); wp_reset_query();?>
+<?php if(is_front_page() || is_page('Locations')) : ?>
+	<script type="text/javascript">
+		google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+<?php endif; ?>
 </body>
 </html>

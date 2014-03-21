@@ -63,6 +63,19 @@
     </div>
 </section>
 
+<!-- BASIC MAP WITH MARKERS SECTION -->
+<section class="parallax-bg" data-type="background" data-speed="10" id="mapstatic">
+    <img src="<?php the_field('map_image'); ?>">
+</section>
+
+
+<!-- IMAGE 03 SECTION -->
+<section class="parallax-bg image imageBox" data-type="background" data-offsetY="850" data-speed="4"   id="image03">
+    <div class="captionBox quote">
+        <h4><?php the_field('quote_3'); ?></h4>
+    </div>
+</section>
+
 <!-- GUIDES SECTION -->
 <section class="parallax-bg" data-type="background" data-speed="10" id="guides">
     <h3>Our Tour Guides</h3>
@@ -83,18 +96,6 @@
     <?php endwhile; endif;?>
     <?php wp_reset_query(); ?>
 </ul>    
-</section>
-
-<!-- IMAGE 03 SECTION -->
-<section class="parallax-bg image imageBox" data-type="background" data-offsetY="850" data-speed="4"   id="image03">
-    <div class="captionBox quote">
-        <h4><?php the_field('quote_3'); ?></h4>
-    </div>
-</section>
-
-<!-- FACEBOOK WIDGET SECTION -->
-<section class="parallax-bg" data-type="background" data-speed="10" id="facebookFeed">
-    <?php the_field('facebook_section');?>
 </section>
 
  <!-- IMAGE 04 SECTION -->
@@ -128,11 +129,6 @@
         <div><?php the_field( 'press_content_1' ); ?></div>
         <div><?php the_field( 'press_section_2' ); ?></div>
     </div>
-</section>
-
-<!-- BASIC MAP WITH MARKERS SECTION -->
-<section class="parallax-bg" data-type="background" data-speed="10" id="mapstatic">
-    <img src="<?php the_field('map_image'); ?>">
 </section>
 
 <?php get_footer();?>
