@@ -7,9 +7,15 @@
 			bloginfo( 'name' );
 		?> 
 	</title>
-	<link rel="shortcut icon" href="http://localhost/WPSydneyRunningTours/wp-content/uploads/2014/03/favicon.png" type="image/x-icon" />
+	<?php 
+		wp_head(); 
+		//Store uploads directory into variable
+		$uploads = wp_upload_dir();
+		$upload_dir = $uploads['baseurl'];
+	?>
+	<link rel="shortcut icon" href="<?php echo $upload_dir; ?>/2014/03/favicon.png" type="image/x-icon" />
 	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
-	<?php wp_head(); ?>
+	
 	<?php if(is_front_page() || is_page('Locations')) : ?>
 		<script type="text/javascript"
 	      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANBOp0nle1Ud7D4DtQFW8KRDhX107gy5Y&sensor=false">
@@ -31,8 +37,8 @@
 		<nav>
 			<ul class="mobile-menu">
 				<li class="logo">
-					<a href="/">                       
-						<img src="http://localhost/WPSydneyRunningTours/wp-content/uploads/2014/02/srt-logo.png">
+					<a href="<?php bloginfo('url'); ?>">                       
+						<img src="<?php echo $upload_dir; ?>/2014/02/srt-logo.png">
 					</a>
 				</li>
 				<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->

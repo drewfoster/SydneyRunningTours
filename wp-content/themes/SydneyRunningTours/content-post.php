@@ -18,6 +18,7 @@
 
 			<?php the_excerpt(); ?>
 			<p><a href="<?php the_permalink(); ?>">Continue Reading &rarr;</a></p>
+			<hr>
 
 		<?php endif; ?>
 	</div>

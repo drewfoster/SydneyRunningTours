@@ -1,5 +1,11 @@
 
 </div> <!-- close main-wrapper div from header.php -->
+<div id="back-top">
+    <p>
+    	<a href="#" class="blueButton-scroll">Book Now</a>
+        <a href="#top"><span><em>&#x25B2; top</em></span></a>
+    </p>
+</div>
 <footer id="contact">
 	<div class="footerBox">
 	<?php $footer = 29; ?>
