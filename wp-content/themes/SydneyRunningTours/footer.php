@@ -6,6 +6,7 @@
         <a href="#top"><span><em>&#x25B2; top</em></span></a>
     </p>
 </div>
+
 <footer id="contact">
 	<div class="footerBox">
 	<?php $footer = 29; ?>
