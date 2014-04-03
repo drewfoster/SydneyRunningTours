@@ -31,7 +31,7 @@
 			<?php endif; ?>
 			
 		</div>
-		<div class="col colRight grid_4 omega">
+		<div class="col colRight grid_4 tablet-hide omega">
 			<?php the_field('right_footer', $footer);?>
 		</div>
 

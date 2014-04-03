@@ -20,6 +20,7 @@ footer {
 		}
 		div#socialMedia {
 			text-align: center;
+			margin: 2em 0;
 			ul {
 				display: inline-block;
 				li a {
@@ -68,7 +69,7 @@ footer {
 		h4 {
 			text-align: center;
 			font-size: 1.8em;
-			margin: 2em 0;
+			margin: 0 0 1em 0;
 		}
 		form {
 			text-align: center;
@@ -116,6 +117,9 @@ footer {
 			img {
 				width: 50%;
 				margin: 2em 0;
+				@media screen and (min-width: $large-screen) {
+					width: 80%;
+				}
 			}
 		}
 	}
@@ -143,3 +147,78 @@ footer {
     	}
 	}
 }
+
+@media screen and (min-width: $medium-screen) {
+	footer {
+		.col { padding: 1em;}
+		.colMid {
+			h4 {
+				font-size: 2.5em;
+			}
+		}
+	}
+}
+
+#back-top {
+	width: 160px;
+	height: 60px;
+	position: fixed;
+	bottom: 40px;
+	right: 10px;
+	z-index: 999999;
+	a {
+		display: block;
+		text-align: center;
+		text-transform: uppercase;
+		text-decoration: none;
+		float: left;
+		margin: 3px;
+		&:hover span, &:active span {
+			background-color: #cff23d;
+			color: #555;
+		}
+	}
+	span {
+		width: 50px;
+		height: 50px;
+		display: block;
+		margin-bottom: 10px;
+		background: #555;
+		color: #cff23d;
+		padding: 5px;
+		border: 2px solid #555;
+	}
+}
+
+.blueButton-scroll {
+border-bottom: 5px solid #3d75f2;
+border-top: 0;
+border-left: 0;
+border-right: 0;
+color: #FFF;
+display: block;
+font-weight: bold;
+text-decoration: none;
+text-transform: uppercase;
+background-clip: padding-box;
+background-color: #3dcff2;
+font: 1em/100% 'din-black', Arial, Helvetica, sans-serif;
+padding: 5%;
+float: right;
+margin: 15px 0 0 0;
+line-height: 29px;
+}
+
+.blueButton-scroll:hover {
+background-color: #718c09;
+border-bottom: 5px solid #555;
+color: #fff;
+}
+
+
+
+
+
+
+
+

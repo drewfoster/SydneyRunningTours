@@ -90,8 +90,20 @@ a.blueButton {
     h6 {
       font-size: 1.2rem;
     }
+    .mobile-hide {  
+        display: initial;
+    }
 }
 
-.mobile-hide {
-  display:none;
+.mobile-hide, .grid_4.mobile-hide, .tablet-hide {
+    display:none;
 }
+
+@media screen and (min-width: $large-screen) {
+    .tablet-hide {  
+        display: initial;
+    }
+}
+
+
+

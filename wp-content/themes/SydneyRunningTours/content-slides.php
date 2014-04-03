@@ -10,7 +10,7 @@ $args = array(
 
 	<section data-type="background" data-speed="4"  class="parallax-bg image imageBox" style="background-image: url('<?php the_field("background_image");?>')">
 
-		<div class="captionBox quote">
+		<div class="captionBox wrap quote">
 		
 		<?php 
 		$trip_advisor = get_field('trip_advisor');

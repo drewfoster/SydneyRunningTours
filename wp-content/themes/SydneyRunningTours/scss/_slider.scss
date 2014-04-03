@@ -3,7 +3,7 @@
 .flexslider a:active,
 .flex-container a:focus,
 .flexslider a:focus  {outline: none;}
-.slides {margin: 0; padding: 0; list-style: none;}
+.slides {display:none; margin: 0; padding: 0; list-style: none;}
 
 @include keyframes(scale) {
 	0% {
@@ -65,5 +65,28 @@ html[xmlns] .slides {display: block;}
 		text-transform: uppercase;
 		padding: 2.5%;
 		font-size: 1em;
+	}
+}
+
+@media screen and (min-width: $medium-screen) {
+	.flexslider .slides {display: initial;}
+	img.mobile-slide {display: none;}
+	.slider-caption {
+		h2 {
+			font-size: 1.8em;
+			margin-right: 0.3em;
+		}
+		a {
+			padding: 0.7em 1em;
+			font-size: 1.5em;
+		}
+	}
+}
+
+@media screen and (min-width: $large-screen) {
+	.slider-caption {
+		h2 {
+			font-size: 2.2em;
+		}
 	}
 }
