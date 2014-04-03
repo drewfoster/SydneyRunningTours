@@ -1,0 +1,26 @@
+/*
+Theme Name: Bespoke Theme for Sydney Running Tours
+Theme URI: http://sydneyrunningtours.com.au
+Description: A custom WordPress theme for Sydney Running Tours
+Author: Andrew Foster and Daniel Kamerman
+Author URI: http://www.drewfost.co.uk
+Version: 1.0
+Tags: clean, light, responsive, two-column, custom-post-types, custom-fields, portfolio
+
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+© Copyright 2014 Sydney Running Tours. All Rights Reserved.
+*/
+
+@import 'scss/bourbon/bourbon';
+@import 'scss/reset';
+@import 'scss/mixins';
+@import 'scss/variables';
+@import 'scss/grid';
+@import 'scss/fonts';
+@import 'scss/body-styles';
+@import 'scss/header-nav';
+@import 'scss/home-page';
+@import 'scss/slider';
+@import 'scss/footer';

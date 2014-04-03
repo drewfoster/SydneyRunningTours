@@ -4,174 +4,142 @@ footer {
 	margin: 0 auto;
 	padding-top: 2em;
 	color: $darker-green;
-	.footerBox {
-		@include clearfix;
-		width: 80%;
-		margin: 10px auto;
-		.col {
-		width: 33%;
-		float:left;
-		&.colLeft {
-			padding: 0 3% 0 0;
-			img {
-				width: 90%;
-			}
-			div#uduDetails {
+	border-top: 5px solid $darker-green;
+	.col {
+		padding: 1em 10%;
+	} 
+	.colLeft {
+		div.udu-green {
+			width: 80%;
+			margin: 0 auto 2em auto;
+		}
+		div#uduDetails {
+			& p {
 				padding: 10px 0;
-				p {
-					padding: 10px 0;
-				}
 			}
-			div#socialMedia {
-				ul {
-					@include clearfix;
-					margin: 0;
-					li {
-						float: left;
-						a {
-							display: block;
-							width: 60px;
-							height: 60px;
-
-							/*IMAGE REPLACEMENT*/
-							text-indent: -9999px;
-
-							/*BACKGROUND IMAGE FOR THE SPRITES*/
-							background: url(http://localhost/WPSydneyRunningTours/wp-content/uploads/2014/02/social-nav2.png)
-							no-repeat
-							transparent;
-							&:hover {
-								@include transform(scale(1.1));
-							}
+		}
+		div#socialMedia {
+			text-align: center;
+			ul {
+				display: inline-block;
+				li a {
+					display: block;
+					width: 60px;
+					height: 60px;
+					/*IMAGE REPLACEMENT*/
+					text-indent: -9999px;
+					/*BACKGROUND IMAGE FOR THE SPRITES*/
+					background: url('http://localhost/WPSydneyRunningTours/wp-content/uploads/2014/03/social-sprite.png') no-repeat transparent; 
+					&:hover, &:active {
+					@include transform(scale(1.1)); 
+					}
+				}
+				li {
+					float: left;
+					&.facebook a {
+						background-position: 0 -60px;
+						&:hover, &:active {
+							background-position: 0 0;
 						}
-						&.linkedin a {
-							background-position: 0 -60px;
-							&:hover {
-								background-position: 0 0;
-							}
+					}
+					&.googleplus a {
+						background-position: -60px -60px;
+						&:hover, &:active {
+							background-position: -60px 0;
 						}
-						&.twitter a {
-							background-position: -60px -60px;
-							&:hover {
-								background-position: -60px 0px;
-							}
+					}
+					&.twitter a {
+						background-position: -120px -60px;
+						&:hover, &:active {
+							background-position: -120px 0;
 						}
-						&.facebook a {
-							background-position: -120px -60px;
-							&:hover {
-								background-position: -120px 0px;
-							}
-						}
-						&.youtube a {
-							background-position: -180px -60px;
-							&:hover {
-								background-position: -180px 0px;
-							}
+					}
+					&.youtube a {
+						background-position: -180px -60px;
+						&:hover, &:active {
+							background-position: -180px 0;
 						}
 					}
 				}
 			}
 		}
-		&.colMid {
-			h2 {
-				font-size: 1.8em;
-				text-align: center;
-				margin-bottom: 1em;
+	}
+	.colMid {
+		h4 {
+			text-align: center;
+			font-size: 1.8em;
+			margin: 2em 0;
+		}
+		form {
+			text-align: center;
+			label input {
+				width: inherit;
+				&:focus, &:hover, &:active {
+					width: inherit;
+				}
 			}
-			form {
-				p.submit {
-					text-align: center;
+			input[type='submit'] {
+				@include blueButton;
+				margin: 0.5em auto;
+				padding-left: 1em;
+				padding-right: 1em;
+				width: inherit;
+				&:focus, &:hover, &:active {
+					width: inherit;
+					background-color: $darker-green;
+					border-bottom-color: $darker-blue;
 				}
-				width: 100%;
-				textarea {
-					resize: vertical;
-				}
-				input, textarea {
-					width: 98%;
-					border: 0;
-					font-size: 1em;
-					padding: 0.5em;
-					border-bottom: 3px solid $lime-green;
-					color: $lime-green;
-					@include transition(all 0.2s ease);
-					&:focus {
-						outline: 0;
-						width: 100%;
-						border-bottom: 3px solid $darker-green;
-					}
-					&:hover {
-						width: 100%;
-						border-bottom: 3px solid $darker-green;
-					}
-				}
-			#submitButton {
-				@include button($sky-blue);
-				text-transform: uppercase;
-				font-size: 1.7em;
-				padding: 2%;
 			}
+			input, textarea {
+				width: 98%;
+				border: 0;
+				font-size: 1em;
+				padding: 0.5em;
+				border-bottom: 3px solid $lime-green;
+				color: $lime-green;
+				@include transition( all 0.2s ease);
+				&:focus, &:hover, &:active {
+					outline: 0;
+		            width: 100%;
+		            border-bottom: 3px solid $darker-green;
+				}
 			}
 		}
-		&.colRight {
-			padding:0 0 0 3%;
-			#gorunning {
-				margin: 0 auto;
-				width: 70%;
-				padding: 1%;
-				}
-			p {
-				padding: 3% 0;
-				}
-			> a {
-				padding: 3% 0;
-			}
-			#tripadvisor {
-				width: 70%;
-				margin: 0.5em 15%;
-			}
-		}
+	}
+	.colRight {
+		div#gorunning {
+			text-align: center;
 		}
 		a {
-			color: $darker-green;
-			font-weight: bold;
-			&:hover, &:active {
-				color: #fff;
+			display: block;
+			text-align: center;
+			img {
+				width: 50%;
+				margin: 2em 0;
 			}
 		}
-		h2 {
-			font-family: "din-black";
-			color: $darker-green;
-		}
-		h5 {
-			color: $darker-green;
-			font-family: "din-regular";
-			padding: 0;
-			margin: 0;
-		}
-		h6 {
-			color: #718c09;
-			font-family: "din-black";
-			padding: 0;
-			margin: 0;
-			}
 	}
 	#footerEnd {
-		background-color: #000;
-		width: 100%;
-		margin: 0 auto;
-		color: #FFF;
-		text-align: center;
-		padding: 10px;
-		span {
-			font-size: 12px;
-			a {
-				color: #FFF;
-				text-decoration: underline;
-				&:hover{
-					color: $darker-green;
-				}
-			}
-		}
+		background-color: $grey;
+    	width: 100%;
+    	color: #fff;
+    	text-align: center;
+    	padding: 10px;
+    	border-top: 5px solid $darker-green;
+    	span {
+    		font-size: 0.8em;
+    		a {
+    			color: #fff;
+    			&:first-child::after, &:last-child::before {
+    				content: " | ";
+    			}
+    			&:hover, &:active {
+    				color: $darker-green;
+    				&:first-child::after, &:last-child::before {
+    					color: #fff;
+    				}
+    			}
+    		}
+    	}
 	}
-	
 }

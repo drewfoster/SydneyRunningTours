@@ -1,0 +1,21 @@
+@mixin blueButton {
+	border-bottom: 4px solid #3d75f2;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    color: #FFF;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-clip: padding-box;
+    background-color: #3dcff2;
+    font-size: 1.5em;
+    font-family: "din-black", sans-serif;
+    padding: 1.5%;
+    vertical-align: bottom;
+    &:hover, &:active {
+    	background-color: #cff23d;
+    	border-bottom: 4px solid #718c09;
+    }
+}

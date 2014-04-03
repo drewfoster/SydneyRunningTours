@@ -1,4 +1,4 @@
-<li style="width: <?php echo $width; ?>%;">
+<li class="grid_4">
             <h5><?php the_field('name'); ?></h5>
             <div class="circle">
                 <a href="/tour-guides/">

@@ -7,7 +7,7 @@
 		<li>On: <?php the_time('F j, Y'); ?></li>
 	</ul>
 
-	<div>
+	<div class="post-content">
 
 		<?php if(is_single()): ?>
 
@@ -18,7 +18,7 @@
 
 			<?php the_excerpt(); ?>
 			<p><a href="<?php the_permalink(); ?>">Continue Reading &rarr;</a></p>
-			<hr>
+			
 
 		<?php endif; ?>
 	</div>

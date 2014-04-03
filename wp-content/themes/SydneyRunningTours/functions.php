@@ -7,7 +7,7 @@ function theme_styles() {
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
 // Load the Theme JS
 function theme_js() {
-	if (is_page('locations')) {
+	if (is_front_page() || is_page('locations')) {
 		wp_enqueue_script( 'maps_js', get_template_directory_uri() . '/js/maps.js', array('jquery'), '', true );
 	}
 	wp_register_script( 'flexslider', get_template_directory_uri() . '/js/flexslider.js', array('jquery'), '', true );

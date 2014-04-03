@@ -1,252 +1,125 @@
 .main-wrapper {
 	text-align: center;
-	margin: 85px auto 0 auto;
+	margin: 0 auto;
 	width: 100%;
 	section {
-		.wrap {
-			width: 80%;
-			margin: 0 auto;
-			}
-		&#slider {
-			padding: 10px 0 0 0;
-			}
-		&#about {
-			@include clearfix;
-			margin-bottom: 4em;
-			h2 {
-				color: $lime-green;
-				font-size: 2.5em;
-				margin:2em 0;
-				line-height: 1.3;
+		&.parallax-bg.image {
+			box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+			border-bottom: 5px solid $darker-green;
+			border-top: 5px solid $darker-green;
+			display: table;
+			width: 100%;
+			height: 400px;
+			.captionBox	{
+				width: 100%;
+				z-index: 99;
+				padding: 0.5em 0;
+				display: table-cell;
+				height: auto;
+				vertical-align: middle;
+				> h4, > a {
+					background-color: rgba(0,0,0,0.5);
+					color: #fff;
+					font-family: 'din-regular';
+					line-height: 1.2;
+					padding: 1em;
 				}
-			ul {
-				margin: 0;
-				li {
-					width: 25%;
-					float: left;
-					h6 {
-						color: #718c09;
-						font-family: "din-black";
-						padding: 0;
-						margin: 0;
-					}
-					p {
-						color: #718c09;
-						font-family: "din-regular";
-						padding: 0;
-						margin: 0;
-					}
+				> a {
+					display: block;
 					img {
-						@include transition(all 0.2s ease);
-						&:hover, &:active {
-							@include transform(scale(1.1));
-						}
-					}
-				}
-			}
-			}
-		&#tours {
-			@include clearfix;
-			width: 100%;
-			background-color: #FFF;
-			h2 {
-				color: $lime-green;
-				font-family: "din-regular";
-				font-size: 2.5em;
-				margin: 1em auto;
-			}
-			ul { 
-				margin: 0;
-				li {
-					display: inline;
-					list-style-type: none;
-					padding: 30px;
-					float: left;
-					width: 25%;
-					div.toursiconBox {
-						h6 {
-							font-family: "din-black";
-							padding: 15px;
-							margin: 0;
-							color: $darker-green;
-						}
-						h5 {
-							color: $darker-green;
-							font-family: "din-black";
-							padding: 15px 0 0 0;
-							margin: 0;
-						}
-						p {
-							font-family: "din-regular";
-							font-style: italic;
-							padding: 0;
-							margin: 0.5em 0;
-							color: $darker-green;
-						}
-						img {
-							@include transition(all 0.2s ease);
-							&:hover {
-								@include transform(scale(1.1));
-							}
-						}
-					}
-				}
-			}			
-		}
-		.imageBox {
-			width: 100%;
-			display: block;
-			text-align: center;
-			background-size: 100%;
-			background-position: center;
-			max-width: 1440px;
-			height: 500px;
-		}	
-		&#image01 {
-			background: url(images/image01.jpg) no-repeat center center;
-			div.quote {
-				font-size: 50px;
-				line-height: 65px;
-				color: white;
-				font-family: "din-regular";
-				padding: 300px 0;
-				background-color: rgba(207,242,61,0.3);
-			}
-		}
-		&#image02{
-			background: url(images/image02.jpg) no-repeat center center;
-			height: 500px;
-		}
-		&#image03 {
-			background: url(images/image03.jpg) no-repeat center center;
-			height: 500px;
-		}
-		&#image04 {
-			background: url(images/image04.jpg) no-repeat center center;
-			padding: 300px 0;
-			h2 {
-				display: inline-block;
-				color: #fff;
-				font-family: "din-black";
-				font-size: 2.5em;
-				margin: 0 auto;
-				padding: 0 2em 0 0;
-				}
-			a {
-				@include button($sky-blue);
-				display: inline-block;
-				text-transform: uppercase;
-				font-size: 1.7em;
-				padding: 2%;
-				}
-			}
-		&#guides {
-			width: 100%;
-			background-color: #FFF;
-			h2 {
-				color: $lime-green;
-				font-size: 2.5em;
-				margin:2em 0 0 0;
-				line-height: 1.3;
-			}
-			ul.guideBox {
-				@include clearfix;
-				width: 80%;
-				margin: 0 auto;
-				list-style: none;
-				li {
-					float: left;
-					width: 33%;
-					padding: 5%;
-					&:hover img, &:active img{
-						@include transform(scale(1.1));
-					}
-					div.circle {
-					    width: 80%;
-					    background-color: $lime-green;
-					    @include border-top-radius(50%);
-						@include border-bottom-radius(50%);
-						@include border-left-radius(50%);
-						@include border-right-radius(50%);
-					    margin: 10% auto;
-					    img {
-					    	border: 10px solid $lime-green;
-					    	@include border-top-radius(50%);
-							@include border-bottom-radius(50%);
-							@include border-left-radius(50%);
-							@include border-right-radius(50%);
-							@include transition(all 0.2s ease);
-					    }
+						display: inline-block;
+						width: 30%;
 					}
 					h4 {
-						color: #cff23d;
-						font-size: 30px;
-						font-family: "din-black";
-						margin: 10px 0;
-					}
-					p {
-						color: #ccc;
-						font-size: 1em;
-						font-family: "din-regular";
+						display: inline-block;
+						color: #fff;
 					}
 				}
 			}
 		}
-		&#press {
-			width: 100%;
-			height: 500px;
-			text-align: center;
-			#pressBox {
-				padding: 100px 0;
-				&:hover img, &:active img {
-					@include transform(scale(1.1));
+		&#image01{
+			background: url(http://localhost/WPSydneyRunningTours/wp-content/uploads/2014/03/image01-mobile.jpg) no-repeat center;
+    
+		}
+		&#image02{
+			background: url(http://localhost/WPSydneyRunningTours/wp-content/uploads/2014/03/image02-mobile.jpg) no-repeat center;
+
+		}
+		&#image03{
+			background: url(http://localhost/WPSydneyRunningTours/wp-content/uploads/2014/03/image03-mobile.jpg) no-repeat center;
+
+		}
+		&#image04{
+			background: url(http://localhost/WPSydneyRunningTours/wp-content/uploads/2014/03/image04-mobile.jpg) no-repeat center;
+
+		}
+		&#about, &#tours, &#guides {
+			margin-bottom: 3em;
+			h3 {
+				margin: 1em 0;
+				line-height: 1.3;
+			}
+			ul {height: auto;}
+			li {
+				padding: 1em;
+				height: 100%;
+				&:nth-child(3) {
+					clear: both;
 				}
-				h3 {
-					color: $lime-green;
-					display: block;
-					text-align: center;
-					font-size: 2.5em;
-					height: 100px;
-					line-height: 100px;
+				h5 {
+					padding: 0.5em 0;
 				}
 				img {
-					display: inline-block;
-					@include transition(all 0.2s ease);
+					width: 80%;
+					padding: 1em;
+				}
+				p {
+					padding: 0 0.4em;
+				}
+				h6 {
+					padding: 0.4em 0;
 				}
 			}
 		}
-		&#signup {
-			width: 100%;
-			background-color: #FFF;
-			text-align: left;
-			padding: 40px 0 40px 0;
-			color: $lime-green;
-			form {
-				text-align: center;
-				#email-signup {
-					font-size: 2.6875rem;
-					font-family: "din-black";
-					color: $lime-green;
-					width: 65%;
-					padding: 10px 0;
-					margin: 0;
-					border: 0;
-					border-bottom: 4px solid $darker-green;
+		#map-canvas {
+			height: 450px;
+		}
+		&#press {
+			margin-bottom: 3em;
+			.post {
+				padding: 1em;
+				width: 100%;
+				h3 {
+				font-size: 1.3em;
 				}
-				input.subscription_btn {
-					@include button($sky-blue);
-					margin: 0 0 0 2em;
-					display: inline-block;
-					text-transform: uppercase;
-					font-size: 1.7em;
-					padding: 1.7%;
+				div.post-content {
+					padding: 0.5em 0;
+					p:last-child {
+						margin: 0.5em 0;
+					}
 				}
+				
 			}
-			h4 {
-				font-size: 2em;
-				margin: 0.5em 0 0 8%;
+			h3 {
+				margin: 1em 0;
+				line-height: 1.3;
+				
 			}
 		}
 	}
+}
+
+@media screen and (min-width: $medium-screen) {
 
 }
+
+
+
+
+
+
+
+
+
+
+

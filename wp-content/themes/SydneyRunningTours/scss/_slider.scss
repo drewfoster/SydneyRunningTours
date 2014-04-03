@@ -1,38 +1,9 @@
-/*
- * jQuery FlexSlider v2.2.0
- * http://www.woothemes.com/flexslider/
- *
- * Copyright 2012 WooThemes
- * Free to use under the GPLv2 license.
- * http://www.gnu.org/licenses/gpl-2.0.html
- *
- * Contributing author: Tyler Smith (@mbmufffin)
- */
 
-
-/* Browser Resets
-*********************************/
 .flex-container a:active,
 .flexslider a:active,
 .flex-container a:focus,
 .flexslider a:focus  {outline: none;}
-.slides,
-.flex-control-nav,
-.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
-
-/* Icon Fonts
-*********************************/
-/* Font-face Icons */
-@font-face {
-	font-family: 'flexslider-icon';
-	src:url('scss/fonts/flexslider-icon.eot');
-	src:url('scss/fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'),
-		url('scss/fonts/flexslider-icon.woff') format('woff'),
-		url('scss/fonts/flexslider-icon.ttf') format('truetype'),
-		url('scss/fonts/flexslider-icon.svg#flexslider-icon') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
+.slides {margin: 0; padding: 0; list-style: none;}
 
 @include keyframes(scale) {
 	0% {
@@ -75,32 +46,24 @@ html[xmlns] .slides {display: block;}
 .flexslider .slides { zoom: 1; }
 
 .slider-caption {
-	@include clearfix;
-	position: absolute;
-	bottom: 5%;
-	background-color: RGBa(0,0,0,0.3);
+	*zoom: 1;
 	width: 100%;
-	padding: 1em 0;
 	z-index: 99;
+	position: absolute;
+	padding: 0.5em 0;
+	bottom: 2%;
+	background-color: rgba(0,0,0,0.5);
 	h2 {
 		display: inline-block;
 		color: #fff;
-		font-family: "din-black";
-		font-size: 2.5em;
-		margin: 0 auto;
-		padding: 0 2em 0 0;
+		padding: 0;
+		font-size: 1.4em;
+		margin: 0 0 0.5em 0;
 	}
 	a {
-		@include button($sky-blue);
-
 		display: inline-block;
 		text-transform: uppercase;
-		font-size: 1.5em;
-		padding: 1.5%;
+		padding: 2.5%;
+		font-size: 1em;
 	}
-}
-
-@media screen and (max-width: 860px) {
-  .flex-direction-nav .flex-prev { opacity: 1; left: 10px;}
-  .flex-direction-nav .flex-next { opacity: 1; right: 10px;}
 }

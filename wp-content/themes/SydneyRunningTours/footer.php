@@ -8,9 +8,9 @@
 </div>
 
 <footer id="contact">
-	<div class="footerBox">
+	<div class="wrap clearfix">
 	<?php $footer = 29; ?>
-		<div class="col colLeft">
+		<div class="col colLeft grid_4 alpha">
 			<div class="udu-green">
 				<a href="http://udu.com.au/" target="_blank">
 					<img src="<?php the_field('left_footer_image', $footer);?>">
@@ -20,7 +20,7 @@
 			<?php the_field('contact_information', $footer);?>
 			
 		</div>
-		<div class="col colMid">
+		<div class="col colMid grid_4">
 			<?php the_field('middle_footer', $footer);?>
 			<?php query_posts('page_id=29');
 			if (have_posts()) : ?>
@@ -31,7 +31,7 @@
 			<?php endif; ?>
 			
 		</div>
-		<div class="col colRight">
+		<div class="col colRight grid_4 omega">
 			<?php the_field('right_footer', $footer);?>
 		</div>
 

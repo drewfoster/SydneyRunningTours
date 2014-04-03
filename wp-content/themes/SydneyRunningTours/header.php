@@ -34,8 +34,8 @@
 			}(document, 'script', 'facebook-jssdk'));</script>
 		<?php endif; ?>
 	<header>
-		<nav>
-			<ul class="mobile-menu">
+		<nav class="wrap">
+			<ul class="mobile-menu clearfix">
 				<li class="logo">
 					<a href="<?php bloginfo('url'); ?>">                       
 						<img src="<?php echo $upload_dir; ?>/2014/02/srt-logo.png">

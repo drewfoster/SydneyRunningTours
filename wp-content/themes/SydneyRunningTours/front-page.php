@@ -1,7 +1,8 @@
 <?php get_header();?>
 
 <section id="slider" class="flexslider">
-    <ul class="slides">
+    <img class="mobile-slide" src="<?php the_field('mobile_fallback');?>">
+    <ul class="slides mobile-hide">
         <li>
             <img src="<?php the_field('homepage_slider_1');?>" alt="Runners with Sydney Backdrop">
         </li>
@@ -24,14 +25,14 @@
             <img src="<?php the_field('homepage_slider_7');?>" alt="Runners with Sydney Backdrop">
         </li>
     </ul>
-    <div class="captionBox sliderquote">
+    <div class="slider-caption">
         <h2><?php the_field('homepage_slider_text'); ?></h2>
         <a href="#" class="blueButton">Book Now</a>
     </div>
 </section>
 
 <?php /* About Section */ ?>
-<section data-type="background" data-speed="10" id="about" class="parallax-bg">
+<section id="about" class="parallax-bg">
     <div class="wrap">
 		<?php the_field('content_section_1'); ?>
 	</div>
@@ -47,7 +48,7 @@
 </section>
 
 <?php /* Tours Section */ ?>
-<section class="parallax-bg" data-type="background" data-speed="10" id="tours"> 
+<section class="parallax-bg" id="tours"> 
     <div class="wrap">
     <?php the_field('content_section_2'); ?>
     </div>
@@ -64,8 +65,8 @@
 </section>
 
 <!-- BASIC MAP WITH MARKERS SECTION -->
-<section class="parallax-bg" data-type="background" data-speed="10" id="mapstatic">
-    <img src="<?php the_field('map_image'); ?>">
+<section class="parallax-bg" id="mapstatic">
+    <?php the_field('map_image'); ?>
 </section>
 
 
@@ -77,7 +78,7 @@
 </section>
 
 <!-- GUIDES SECTION -->
-<section class="parallax-bg" data-type="background" data-speed="10" id="guides">
+<section class="parallax-bg" id="guides">
     <h3>Our Tour Guides</h3>
     <?php 
 
@@ -101,13 +102,12 @@
  <!-- IMAGE 04 SECTION -->
 <section data-type="background" data-offsetY="1000" data-speed="4"  class="parallax-bg image imageBox" id="image04">
     <div class="captionBox caption">
-        <h4><?php the_field('call_to_action_2'); ?></h4>
-        <a href="#" class="blueButton">Book Now</a>  
+        <h4><?php the_field('call_to_action_2'); ?></h4>  
     </div>
 </section>
 
 <!-- PRESS SECTION -->
-<section class="parallax-bg" data-type="background" data-speed="10" id="press">
+<section class="parallax-bg" id="press">
     <div class="wrap">
         <h3><?php the_field('press_section'); ?></h3>
         <?php 
@@ -118,16 +118,16 @@
 
         $the_query = new WP_Query( $args );
         ?>
-        <div>
+        <div class="grid_4 alpha post">
             <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
     
-            <?php get_template_part('content', 'post'); ?>
+                <?php get_template_part('content', 'post'); ?>
     
             <?php endwhile; endif;?>
             <?php wp_reset_query(); ?>
         </div>
-        <div><?php the_field( 'press_content_1' ); ?></div>
-        <div><?php the_field( 'press_section_2' ); ?></div>
+        <div class="grid_4 mobile-hide"><?php the_field( 'press_content_1' ); ?></div>
+        <divclass="grid_4 omega"><?php the_field( 'press_section_2' ); ?></div>
     </div>
 </section>
 
