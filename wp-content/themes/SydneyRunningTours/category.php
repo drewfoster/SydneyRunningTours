@@ -1,7 +1,7 @@
 <?php get_header(); 
 $current_page = get_the_ID();?>
 
-<div class="wrap">
+<div class="wrap grid_12 content-page">
 
 	<h3>Category: <?php single_cat_title();?></h3>
 
@@ -32,7 +32,7 @@ $current_page = get_the_ID();?>
 			$bg_img = get_field('background_image', $slide->ID);			
 		?>
 
-			<section data-type="background" data-speed="4"  class="parallax-bg image imageBox" style="background-image: url('<?php echo $bg_img;?>')">
+			<section class="parallax-bg image imageBox" style="background-image: url('<?php echo $bg_img;?>')">
 
 				<div class="captionBox quote">
 				

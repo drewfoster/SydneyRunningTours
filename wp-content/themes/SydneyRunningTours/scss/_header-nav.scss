@@ -65,6 +65,8 @@ header {
             }
             a {
               color: $darker-green;
+              display: block;
+              height: 100%;
               &:active {
                 color: #fff;
               }
@@ -160,7 +162,7 @@ header {
                                 li {
                                     float: none;
                                     border: 0;
-                                    padding: 1em;
+                                    padding: 0.5em 1em;
                                     &:last-child {
                                         border-bottom: 5px solid $darker-green;
                                     }

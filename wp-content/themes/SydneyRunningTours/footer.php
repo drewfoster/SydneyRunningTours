@@ -3,7 +3,7 @@
 <div id="back-top">
     <p>
     	<a href="#" class="blueButton-scroll">Book Now</a>
-        <a href="#top"><span><em>&#x25B2; top</em></span></a>
+        <a href="#top"><span>&#x25B2; top</span></a>
     </p>
 </div>
 
@@ -38,20 +38,20 @@
 	</div>
 
 	<div id="footerEnd">
-	<span>&copy; <?php echo date('Y'); ?> Understand Down Under. All rights reserved.
+	<span>&copy; <?php echo date('Y'); ?> Understand Down Under. All rights reserved. Site by <a target="_blank" href="http://drewfost.co.uk"><span aria-hidden="true" data-icon="&#xe600;"></span></a> &amp; <a target="_blank" href="http://danielkam.com">DK</a>.</span>
 		<?php
 			$args = array(
 				'menu' => 'footer-menu',
 				'echo' => false
-				);
-			echo strip_tags(wp_nav_menu( $args ), '<a>');
-		?>
-	</span>                
+				); ?>
+		<ul class="footer-menu">
+			<?php echo strip_tags(wp_nav_menu( $args ), '<li><a>'); ?>
+		</ul>                
 	</div>
 
 </footer>
 <?php wp_footer(); wp_reset_query();?>
-<?php if(is_front_page() || is_page('Locations')) : ?>
+<?php if(is_front_page() || is_page( 100 )) : ?>
 	<script type="text/javascript">
 		google.maps.event.addDomListener(window, 'load', initialize);
 	</script>

@@ -134,8 +134,18 @@ footer {
     		font-size: 0.8em;
     		a {
     			color: #fff;
+    			&:hover, &:active {
+    				color: $darker-green;
+    			}
+    		}
+    		span { font-size: 1rem;}
+    	}
+    	ul.footer-menu {
+    		li {
+    			font-size: 0.8em;
+    			display: inline-block;
     			&:first-child::after, &:last-child::before {
-    				content: " | ";
+    				content: ' | ';
     			}
     			&:hover, &:active {
     				color: $darker-green;
@@ -143,6 +153,12 @@ footer {
     					color: #fff;
     				}
     			}
+	    		a {
+	    			color: #fff;
+	    			&:hover, &:active {
+	    				color: $darker-green;
+	    			}	
+	    		}
     		}
     	}
 	}

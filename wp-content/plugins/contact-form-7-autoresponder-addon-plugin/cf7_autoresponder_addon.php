@@ -4,12 +4,12 @@
  Plugin URI: http://wpsolutions-hq.com
  Description: Allows you to add your visitors to your Mailchimp AutoResponder list when they submit a message using Contact Form 7
  Author: WPSolutions-HQ
- Version: 1.6
+ Version: 1.7
  Author URI: http://wpsolutions-hq.com
  */
 define( 'CF7ADDON_PATH', dirname(__FILE__) . '/' );
-if (!class_exists('MCAPI')) {
-	include_once ( CF7ADDON_PATH . 'inc/MCAPI.class.php' );
+if (!class_exists('Mailchimp')) {
+	include_once ( CF7ADDON_PATH . 'inc/Mailchimp.php' );
 }
 
 add_action('plugins_loaded', 'cf7_addon_execute_plugins_loaded_operations');
@@ -156,6 +156,12 @@ function contact7addonfunc($cf7) {
 	$mc_enabled = $mailchimp_settings['mc_enabled']; //get global checkbox value for this feature
 	$mc_disable_double_opt = $mailchimp_settings['mc_disable_double_opt'];
 	
+	if($mc_disable_double_opt){
+		$double_optin = false;
+	}else{
+		$double_optin = true;
+	}
+	
 	//the following few lines will check if an "opt-in" checkbox has been added to the CF7 form
 	$optin_box_exists = false; //assume by default a CF7 form will not have an "mc-subscribe" checkbox
 	
@@ -183,7 +189,15 @@ function contact7addonfunc($cf7) {
 				}
 			}
 		}
-		$email = $cf7->posted_data['your-email']; //get the submitted email address from CF7
+		
+		if (array_key_exists('your-email', $cf7->posted_data)){
+			$email = $cf7->posted_data['your-email']; //get the submitted email address from CF7	
+		}else{
+			//ignore this form
+			return;
+		}
+		
+		//$email = $cf7->posted_data['your-email']; //get the submitted email address from CF7
 		if (array_key_exists('your-name', $cf7->posted_data))
 			$firstname = $cf7->posted_data['your-name']; //in case someone uses the standard default CF7 form
 		else if (array_key_exists('your-first-name', $cf7->posted_data))
@@ -200,22 +214,47 @@ function contact7addonfunc($cf7) {
 		);
 		
 		$email_type = 'html'; //for some reason I need this in order to get the API to identify the disable_optin variable
-
-		$api = new MCAPI($mc_api);
-		$yourlists = $api->lists();
+		$api = new Mailchimp($mc_api);
+		
+		try {
+			$yourlists = $api->lists->getList();
+		} catch (Exception $e) {
+			error_log( "Error!\n", 3, dirname( __FILE__ ).'/cf7_autoresp.log' );
+			error_log( "\tCode=".$e->getCode()."\n", 3, dirname( __FILE__ ).'/cf7_autoresp.log' );
+			error_log( "\tMsg=".$e->getMessage()."\n", 3, dirname( __FILE__ ).'/cf7_autoresp.log' );
+			return;			
+		}
+		
+		$email_array = array('email' => $email, 'euid' => '', 'leid' => ''); //this is the special format needed when calling subscribe method
+		
+//		$api = new MCAPI($mc_api);
+//		$yourlists = $api->lists();
 		foreach ($yourlists['data'] as $list){
 			if($list['name'] == $mc_list)
 			{
-				$retval = $api->listSubscribe( $list['id'], $email, $mergeVars, $email_type, $mc_disable_double_opt); 	//add subscriber to mailchimp
+				//$retval = $api->listSubscribe( $list['id'], $email, $mergeVars, $email_type, $mc_disable_double_opt); 	//add subscriber to mailchimp
+				try {
+					//$mergeVars2 = $api->lists->mergeVars(array($list['id']));
+					$retval = $api->lists->subscribe( $list['id'], $email_array, $mergeVars, $email_type, $double_optin); 	//add subscriber to mailchimp
+					
+				} catch (Exception $e) {
+					error_log( "Error!\n", 3, dirname( __FILE__ ).'/cf7_autoresp.log' );
+					error_log( "\tCode=".$e->getCode()."\n", 3, dirname( __FILE__ ).'/cf7_autoresp.log' );
+					error_log( "\tMsg=".$e->getMessage()."\n", 3, dirname( __FILE__ ).'/cf7_autoresp.log' );
+					return;			
+					
+				}
 			}
-			if ($api->errorCode){
+/*			if ($api->errorCode){
 				error_log( "Unable to load listSubscribe()!\n", 3, dirname( __FILE__ ).'/cf7_autoresp.log' );
 				error_log( "\tCode=".$api->errorCode."\n", 3, dirname( __FILE__ ).'/cf7_autoresp.log' );
 				error_log( "\tMsg=".$api->errorMessage."\n", 3, dirname( __FILE__ ).'/cf7_autoresp.log' );
 				return;
 			} else {
 			}
+*/			
 		}
+		
 	}
 }
 ?>

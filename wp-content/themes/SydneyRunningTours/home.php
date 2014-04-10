@@ -1,22 +1,24 @@
 <?php get_header(); 
 $current_page = get_the_ID();?>
 
-<div>
-	<?php the_field('blog_page_content', 45); ?>
-</div>
+<div class="wrap grid_12 blog content-page">
+	<div>
+		<?php the_field('blog_page_content', 45); ?>
+	</div>
 
-<div>
+	<div>
 
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-		<?php get_template_part('content', 'post'); ?>
+			<?php get_template_part('content', 'post'); ?>
 
-	<?php endwhile; else: ?>
-		
-		<p>There are no posts or pages here</p>
+		<?php endwhile; else: ?>
+			
+			<p>There are no posts or pages here</p>
 
-	<?php endif; ?>
+		<?php endif; ?>
 
+	</div>
 </div>
 
 <?php 
@@ -34,7 +36,7 @@ $current_page = get_the_ID();?>
 			$bg_img = get_field('background_image', $slide->ID);			
 		?>
 
-			<section data-type="background" data-speed="4"  class="parallax-bg image imageBox" style="background-image: url('<?php echo $bg_img;?>')">
+			<section class="parallax-bg image imageBox" style="background-image: url('<?php echo $bg_img;?>')">
 
 				<div class="captionBox quote">
 				

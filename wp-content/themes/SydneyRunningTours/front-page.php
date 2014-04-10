@@ -83,7 +83,8 @@
     <?php 
 
         $args = array(
-            'post_type' => 'tour_guides'
+            'post_type' => 'tour_guides',
+            'order' => 'ASC'
         );
 
         $the_query = new WP_Query( $args );

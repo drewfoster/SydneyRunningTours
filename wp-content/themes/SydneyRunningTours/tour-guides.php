@@ -5,26 +5,31 @@
 get_header();
 $current_page = get_the_ID();
 ?>
+<div class="wrap content-page guides">
+	<h1><?php the_title(); ?></h1>
 
-<h1>Tour Guides</h1>
-<?php
+	<div><?php the_field('page_intro', 11);?></div>
 
-			$args = array(
-				'post_type' => 'tour_guides'
-			);
+	<?php
 
-			$the_query = new WP_Query( $args );
+				$args = array(
+					'post_type' => 'tour_guides',
+					'order' => 'ASC'
+				);
 
-		?>
+				$the_query = new WP_Query( $args );
 
-<ul>
-		<?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+			?>
 
-			<?php get_template_part('content', 'tourguides'); ?>
+	<ul>
+			<?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-		<?php endwhile; endif; wp_reset_query(); ?>
+				<?php get_template_part('content', 'tourguides'); ?>
 
-</ul>
+			<?php endwhile; endif; wp_reset_query(); ?>
+
+	</ul>
+</div>
 
 <?php 
 		
@@ -41,7 +46,7 @@ $current_page = get_the_ID();
 			$bg_img = get_field('background_image', $slide->ID);			
 		?>
 
-			<section data-type="background" data-speed="4"  class="parallax-bg image imageBox" style="background-image: url('<?php echo $bg_img;?>')">
+			<section class="parallax-bg image imageBox" style="background-image: url('<?php echo $bg_img;?>')">
 
 				<div class="captionBox quote">
 				

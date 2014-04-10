@@ -16,13 +16,13 @@ You can either choose to automatically attempt to subscribe people to your list 
 OR, you can also add a checkbox to your CF7 form with the "name" parameter set to "mc-subscribe" with a label saying something like "Subscribe Me To Your List". (see below) 
 
 == Using a checkbox to give your visitors a choice regarding subscription to your mailing list ==
-You can also add a checkbox to your CF7 form with the “name” parameter set to “mc-subscribe” with a label saying something like “Subscribe Me To Your List”.
+You can also add a checkbox to your CF7 form with the "name" parameter set to "mc-subscribe" with a label saying something like "Subscribe Me To Your List".
 
 This will then give your visitors the option of whether they want to subscribe to your list or newsletter or whatever, after submitting the CF7 form.
 
-If this checkbox is present and it is enabled and provided the “Enable Mailchimp List Insertion” is also enabled, the plugin will allow the subscription to occur, otherwise it will not.
+If this checkbox is present and it is enabled and provided the "Enable Mailchimp List Insertion" is also enabled, the plugin will allow the subscription to occur, otherwise it will not.
 
-If by default you do not have the “mc-subscribe” checkbox in your form and the “Enable Mailchimp List Insertion” is also enabled, then subscription will occur by default.
+If by default you do not have the "mc-subscribe" checkbox in your form and the "Enable Mailchimp List Insertion" is also enabled, then subscription will occur by default.
 
 
 == How to subscribe people to different list names based on the CF7 form ==
@@ -110,6 +110,9 @@ The plugin also has a setting where you can disable the double opt-in email. Ple
 2. Screen shot file screenshot-2.jpg shows the administration page of this plugin.
 
 == Changelog ==
+
+= 1.7 =
+* Implemented new Mailchimp API v2.0.
 
 = 1.6 =
 * Fixed bug - Latest CF7 version introduced a bug: people were being subscribed even when checkbox was disabled.

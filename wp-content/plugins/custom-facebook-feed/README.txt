@@ -3,10 +3,9 @@ Contributors: smashballoon
 Tags: Facebook, Facebook feed, Facebook posts, Facebook wall, Facebook events, Facebook page, Facebook group, Facebook Like box, Customizable Facebook Feed, custom, customizable, seo, responsive, mobile, social
 Requires at least: 3.0
 Tested up to: 3.8.1
-Stable tag: 1.8.2.3
+Stable tag: 1.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H5XFD33R3FHMG
 
 The Custom Facebook Feed allows you to display a completely customizable Facebook feed of any public Facebook page or group on your website
 
@@ -29,11 +28,13 @@ Display a **completely customizable**, **responsive** and **search engine crawla
 * Show **events** from your Facebook feed with name, date/time, location and description
 * Add your own **custom CSS**
 * **Caching** means that your Facebook posts load lightning fast. Set your own caching time - check for new posts on Facebook every few seconds, minutes, hours or days. You decide.
+* **Super simple to set up**. Just enter your Facebook page ID and you're done.
 * Show and hide certain parts of each Facebook post
-* Choose to show the Facebook profile picture and name above each post
+* Show or hide the Facebook profile picture and name of the author above each post
 * Display Facebook posts by just the page owner, everyone who posts on your Facebook page, or only other people
 * Control the width, height, padding and background color of your Facebook feed
 * Customize the size, weight and color of text
+* Supports Facebook tags - creates links when using the @ symbol to tag people in your Facebook posts
 * Select from a range of date formats or enter your own
 * Use your own custom link text in place of the defaults
 * Use the shortcode options to style multiple Facebook feeds in completely different ways
@@ -84,10 +85,6 @@ The Facebook feed you're trying to display has to be from a publicly accessible 
 If your Facebook page has any restrictions on it (age, for example) then it means that people have to be signed into Facebook in order to view your page. This isn't desirable for most Facebook pages as it means that it isn't accessible by people who don't have a Facebook account and that your Facebook page can't be crawled and indexed by search engines.
 
 An easy way to determine whether your Facebook page is set to public is to sign out of your Facebook account and try to visit your page. If Facebook forces you to sign in to view your page then it isn't public. You can change your Facebook page to public in your Facebook page settings simply by removing any age or location restrictions you have on it ([screenshot](http://smashballoon.com/wp-content/uploads/2013/06/facebook-page-restrictions.png)), which will then allow the Custom Facebook Feed plugin to access and display your feed.
-
-= What's an Access Token and why do I need one? =
-
-An Access Token is required by Facebook in order to access their feeds.  Don't worry, it's easy to get one.  Just follow the step-by-step instructions [here](http://smashballoon.com/custom-facebook-feed/access-token/ "Getting an Access Token"). to get yours. Your Access Token will never expire.
 
 = Can I display feeds from multiple Facebook pages or groups? =
 
@@ -150,7 +147,7 @@ We understand that sometimes you need help, have issues or just have questions. 
 
 **For step-by-step instructions and screenshots on how to get a Facebook Access Token just follow the [Facebook Access Token instructions](http://smashballoon.com/custom-facebook-feed/access-token/ "Facebook Access Token instructions") on the Smash Balloon website.**
 
-In order to use the Custom Facebook Feed Plugin you will need to obtain an Access Token from Facebook.  Don't worry though, this is really easy to do.  Just follow the steps below:
+You no longer need your own Access Token to use the Custom Facebook Feed Plugin, but if you'd like to use your own then you will need to obtain one from Facebook.  Don't worry though, this is really easy to do.  Just follow the steps below:
 
 **1)** Go to [developers.facebook.com](http://developers.facebook.com "Facebook developers website") and click on Log In in the top right.  Log in using your personal Facebook credentials.
 
@@ -272,6 +269,22 @@ Credit [iMarketing Factory](http://www.imarketingfactory.com/facebook/ "The Impo
 9. It's super easy to display your Facebook feed in any page or post
 
 == Changelog ==
+
+= 1.9.1 =
+* Fix: Fixed an issue with the 'textlink' shortcode option
+* Fix: Fixed an bug with post text sometimes being duplicated when linked
+* Fix: Removed error_reporting(0);
+
+= 1.9.0 =
+* New: Added the ability to change the text size and color of the post author
+* New: Define the format, size and color of shared link titles
+* New: You can now define the color of the links in your post text, descriptions and events
+* Tweak: Moved the Feed Header options to the Typography page
+* Tweak: Moved the Ajax setting to the Misc page
+* Tweak: Now removes any query strings attached to the Page ID
+* Fix: Fixed an issue with HTML characters not rendering correctly when linking the post text
+* Fix: Fixed an issue with some themes causing the clear element to prevent links being clickable
+* Fix: Some minor bug fixes
 
 = 1.8.2.3 =
 * New: Now supports Facebook tags - creates links when using the @ symbol to tag other people or Facebook pages in your posts

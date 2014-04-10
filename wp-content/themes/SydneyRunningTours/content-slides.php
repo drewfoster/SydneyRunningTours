@@ -8,7 +8,7 @@ $args = array(
 
 <?php if ( have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-	<section data-type="background" data-speed="4"  class="parallax-bg image imageBox" style="background-image: url('<?php the_field("background_image");?>')">
+	<section class="parallax-bg image imageBox" style="background-image: url('<?php the_field("background_image");?>')">
 
 		<div class="captionBox wrap quote">
 		

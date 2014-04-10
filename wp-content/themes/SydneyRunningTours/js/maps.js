@@ -5,22 +5,22 @@ var styles = [
           "elementType":"geometry",
           "stylers":[
             {"visibility":"on"},
-            {"color":"#f8fde2"}
+            {"color":"#effbbe"}
           ]},
         {"featureType":"landscape.man_made",
           "elementType":"geometry.fill",
           "stylers":[
-            {"color":"#b7ca65"}
+            {"color":"#cff23d"}
           ]},
         {"featureType":"landscape.natural",
           "elementType":"geometry.fill",
           "stylers":[
-            {"color":"#ddf674"}
+            {"color":"#cff23d"}
           ]},  
         {"featureType":"poi",
           "elementType":"geometry.fill",
           "stylers":[
-            {"color":"#769E72"}
+            {"color":"#cff23d"}
           ]},
         {"featureType":"poi",
           "elementType":"labels.text.fill",
@@ -36,7 +36,7 @@ var styles = [
           "elementType":"geometry",
           "stylers":[
           // {"visibility":"simplified"},
-          {"color":"#8dab68"}
+          {"color":"#718c09"}
           ]},
           {"featureType":"road",
           "elementType":"geometry.fill",
@@ -72,7 +72,7 @@ var styles = [
           {"featureType":"road.highway",
           "elementType":"geometry",
           "stylers":[
-          {"color":"#f2e83d"}
+          {"color":"#718c09"}
           ]},
           {"featureType":"transit",
           "stylers":[
@@ -82,12 +82,12 @@ var styles = [
           "elementType":"geometry.stroke",
           "stylers":[
           {"visibility":"on"},
-          {"color":"#87ae79"}
+          {"color":"#3dcff2"}
           ]},
           {"featureType":"administrative",
           "elementType":"geometry.fill",
           "stylers":[
-          {"color":"#7f2200"},
+          {"color":"#3d75f2"},
           {"visibility":"off"}
           ]},
           {"featureType":"administrative",
@@ -116,6 +116,8 @@ function initialize() {
     zoom: 10,
     center: sydney,
     scrollwheel: false,
+    scaleControl: true,
+    streetViewControl: false,
     mapTypeControlOptions: {
     mapTypeIds: ['Styled']
     },
@@ -166,7 +168,7 @@ function dropPoi() {
 
 function addRunMarker(map, locations) {
     
-    var image = {url: 'http://localhost/WPSydneyRunningTours/wp-content/uploads/2014/03/srt-marker.png'};
+    var image = {url: 'http://localhost/WPSydneyRunningTours/wp-content/uploads/2014/04/srt-marker-blue.png'};
     var runStart = locations;
     var infoTitle = runStart.title;
     var myLatLng = new google.maps.LatLng(runStart.lat, runStart.lng);
@@ -189,7 +191,7 @@ function addRunMarker(map, locations) {
 
 function addPoIMarker(map, locations) {
     
-    var image = {url: 'http://localhost/WPSydneyRunningTours/wp-content/uploads/2014/03/srt-marker.png'};
+    var image = {url: 'http://localhost/WPSydneyRunningTours/wp-content/uploads/2014/04/srt-marker-light-blue.png'};
     var poiLoc = locations;
     var infoTitle = poiLoc.title;
     var myLatLng = new google.maps.LatLng(poiLoc.lat, poiLoc.lng);

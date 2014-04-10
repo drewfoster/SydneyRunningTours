@@ -264,6 +264,10 @@ table {
 strong {
   font-family: 'din-black'; }
 
+em {
+  font-family: 'din-regular';
+  font-style: italic; }
+
 *,
 *:before,
 *:after {
@@ -435,7 +439,9 @@ header {
         padding-left: 30px;
         padding-top: 5px; }
     header nav section.full-menu a {
-      color: #718c09; }
+      color: #718c09;
+      display: block;
+      height: 100%; }
       header nav section.full-menu a:active {
         color: #fff; }
     header nav section.full-menu ul li a.facebook-icon, header nav section.full-menu ul li a.tripadvisor-social-icon {
@@ -511,7 +517,7 @@ header {
                 header nav section.full-menu > ul:first-child > li > ul li {
                   float: none;
                   border: 0;
-                  padding: 1em; }
+                  padding: 0.5em 1em; }
                   header nav section.full-menu > ul:first-child > li > ul li:last-child {
                     border-bottom: 5px solid #718c09; }
                   header nav section.full-menu > ul:first-child > li > ul li:hover, header nav section.full-menu > ul:first-child > li > ul li:active {
@@ -590,11 +596,6 @@ header {
       @media screen and (min-width: 960px) {
         .main-wrapper section#about li, .main-wrapper section#tours li, .main-wrapper section#guides li {
           padding: 0; } }
-      .main-wrapper section#about li:nth-child(3), .main-wrapper section#tours li:nth-child(3), .main-wrapper section#guides li:nth-child(3) {
-        clear: both; }
-        @media screen and (min-width: 960px) {
-          .main-wrapper section#about li:nth-child(3), .main-wrapper section#tours li:nth-child(3), .main-wrapper section#guides li:nth-child(3) {
-            clear: none; } }
       .main-wrapper section#about li h5, .main-wrapper section#tours li h5, .main-wrapper section#guides li h5 {
         padding: 0.5em 0; }
       .main-wrapper section#about li img, .main-wrapper section#tours li img, .main-wrapper section#guides li img {
@@ -617,6 +618,13 @@ header {
         padding: 0 0.4em; }
       .main-wrapper section#about li h6, .main-wrapper section#tours li h6, .main-wrapper section#guides li h6 {
         padding: 0.4em 0; }
+  .main-wrapper section#about li:nth-child(3), .main-wrapper section#tours li:nth-child(3) {
+    clear: both; }
+    @media screen and (min-width: 960px) {
+      .main-wrapper section#about li:nth-child(3), .main-wrapper section#tours li:nth-child(3) {
+        clear: none; } }
+  .main-wrapper section#guides .guideBox > li:last-child {
+    margin-right: 0; }
   .main-wrapper section #map-canvas {
     height: 450px; }
   .main-wrapper section#press {
@@ -916,12 +924,23 @@ footer {
       font-size: 0.8em; }
       footer #footerEnd span a {
         color: #fff; }
-        footer #footerEnd span a:first-child::after, footer #footerEnd span a:last-child::before {
-          content: " | "; }
         footer #footerEnd span a:hover, footer #footerEnd span a:active {
           color: #718c09; }
-          footer #footerEnd span a:hover:first-child::after, footer #footerEnd span a:hover:last-child::before, footer #footerEnd span a:active:first-child::after, footer #footerEnd span a:active:last-child::before {
-            color: #fff; }
+      footer #footerEnd span span {
+        font-size: 1rem; }
+    footer #footerEnd ul.footer-menu li {
+      font-size: 0.8em;
+      display: inline-block; }
+      footer #footerEnd ul.footer-menu li:first-child::after, footer #footerEnd ul.footer-menu li:last-child::before {
+        content: ' | '; }
+      footer #footerEnd ul.footer-menu li:hover, footer #footerEnd ul.footer-menu li:active {
+        color: #718c09; }
+        footer #footerEnd ul.footer-menu li:hover:first-child::after, footer #footerEnd ul.footer-menu li:hover:last-child::before, footer #footerEnd ul.footer-menu li:active:first-child::after, footer #footerEnd ul.footer-menu li:active:last-child::before {
+          color: #fff; }
+      footer #footerEnd ul.footer-menu li a {
+        color: #fff; }
+        footer #footerEnd ul.footer-menu li a:hover, footer #footerEnd ul.footer-menu li a:active {
+          color: #718c09; }
 
 @media screen and (min-width: 767px) {
   footer .col {
@@ -977,3 +996,120 @@ footer {
   background-color: #718c09;
   border-bottom: 5px solid #555;
   color: #fff; }
+
+.content-page, .location-page {
+  margin-top: 3em;
+  margin-bottom: 3em; }
+  .content-page h3, .content-page h2, .content-page h4, .content-page h5, .content-page h6, .content-page p, .location-page h3, .location-page h2, .location-page h4, .location-page h5, .location-page h6, .location-page p {
+    margin: 1em 0;
+    line-height: 1.5; }
+  .content-page h5, .content-page h6, .location-page h5, .location-page h6 {
+    text-align: left; }
+    .content-page h5 > span, .content-page h6 > span, .location-page h5 > span, .location-page h6 > span {
+      text-align: center;
+      display: block; }
+  .content-page p, .location-page p {
+    text-align: justify; }
+  .content-page img, .location-page img {
+    max-width: 300px; }
+  .content-page ul, .content-page ol, .location-page ul, .location-page ol {
+    list-style: initial;
+    text-align: initial;
+    list-style-position: inside; }
+  .content-page ul, .location-page ul {
+    list-style-image: url("http://localhost/WPSydneyRunningTours/wp-content/uploads/2014/04/srt-marker.png"); }
+    .content-page ul li, .location-page ul li {
+      line-height: 2;
+      vertical-align: top; }
+  .content-page.guides ul, .content-page.blog ul, .location-page.guides ul, .location-page.blog ul {
+    list-style: none; }
+    .content-page.guides ul .center, .content-page.blog ul .center, .location-page.guides ul .center, .location-page.blog ul .center {
+      text-align: center; }
+  .content-page dt, .location-page dt {
+    padding: 1em 0;
+    cursor: pointer; }
+    .content-page dt span, .location-page dt span {
+      padding-right: 0.5em; }
+  .content-page .location > p, .location-page .location > p {
+    text-align: center; }
+  .content-page p.buttonGroup, .location-page p.buttonGroup {
+    margin-top: 2.5em;
+    margin-bottom: 2.5em; }
+    .content-page p.buttonGroup button, .location-page p.buttonGroup button {
+      display: inline-block;
+      padding: 0.6em;
+      color: #fff;
+      font-size: 0.9em;
+      border: 0;
+      margin: 0; }
+      @media screen and (min-width: 767px) {
+        .content-page p.buttonGroup button, .location-page p.buttonGroup button {
+          font-size: 1.2em; } }
+      .content-page p.buttonGroup button:first-child, .location-page p.buttonGroup button:first-child {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        background-color: #3d75f2; }
+        .content-page p.buttonGroup button:first-child:hover, .content-page p.buttonGroup button:first-child:active, .location-page p.buttonGroup button:first-child:hover, .location-page p.buttonGroup button:first-child:active {
+          background-color: #0e4bd4; }
+      .content-page p.buttonGroup button:last-child, .location-page p.buttonGroup button:last-child {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        background-color: #3dcff2; }
+        .content-page p.buttonGroup button:last-child:hover, .content-page p.buttonGroup button:last-child:active, .location-page p.buttonGroup button:last-child:hover, .location-page p.buttonGroup button:last-child:active {
+          background-color: #0eaed4; }
+  .content-page .guide-details h2, .location-page .guide-details h2 {
+    margin-top: 0; }
+
+form#commentform {
+  width: 94%;
+  margin: 0 auto; }
+  form#commentform p {
+    text-align: justify; }
+    form#commentform p textarea {
+      width: 100%; }
+    form#commentform p:last-child {
+      text-align: center; }
+    form#commentform p input[type="text"], form#commentform p textarea {
+      border: 0;
+      font-size: 1em;
+      padding: 0.5em;
+      border: 1px solid #718c09;
+      border-bottom: 3px solid #cff23d;
+      color: #cff23d; }
+      form#commentform p input[type="text"]:focus, form#commentform p input[type="text"]:hover, form#commentform p input[type="text"]:active, form#commentform p textarea:focus, form#commentform p textarea:hover, form#commentform p textarea:active {
+        outline: 0;
+        border-bottom: 3px solid #718c09; }
+    form#commentform p input[type="submit"] {
+      border-bottom: 4px solid #3d75f2;
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      color: #FFF;
+      display: inline-block;
+      font-weight: bold;
+      text-decoration: none;
+      text-transform: uppercase;
+      background-clip: padding-box;
+      background-color: #3dcff2;
+      font-size: 1.5em;
+      font-family: "din-black", sans-serif;
+      padding: 1.5%;
+      vertical-align: bottom; }
+      form#commentform p input[type="submit"]:hover, form#commentform p input[type="submit"]:active {
+        background-color: #cff23d;
+        border-bottom: 4px solid #718c09; }
+  @media screen and (min-width: 767px) {
+    form#commentform {
+      width: 60%; } }
+  @media screen and (min-width: 960px) {
+    form#commentform {
+      width: 50%; } }
+
+#map-canvas {
+  height: 450px;
+  margin: 0;
+  border-top: 5px solid #718c09;
+  border-bottom: 5px solid #718c09; }
+
+section.parallax-bg {
+  background-position-y: 30%; }

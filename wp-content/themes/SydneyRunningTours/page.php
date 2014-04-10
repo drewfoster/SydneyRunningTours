@@ -1,12 +1,6 @@
-<?php
-
-echo "this is page.php";
-
-?>
-
 <?php get_header(); 
 $current_page = get_the_ID();?>
-<div>
+<div class="wrap grid_12 clearfix content-page">
 
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
@@ -36,7 +30,7 @@ $current_page = get_the_ID();?>
 			$bg_img = get_field('background_image', $slide->ID);			
 		?>
 
-			<section data-type="background" data-speed="4"  class="parallax-bg image imageBox" style="background-image: url('<?php echo $bg_img;?>')">
+			<section class="parallax-bg image imageBox" style="background-image: url('<?php echo $bg_img;?>')">
 
 				<div class="captionBox quote">
 				

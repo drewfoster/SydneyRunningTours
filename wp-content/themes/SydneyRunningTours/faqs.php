@@ -16,8 +16,8 @@ $current_page = get_the_ID();?>
 			$the_query = new WP_Query( $args );
 
 		?>
-
-	<h1>Frequently Asked Questions</h1>
+<div class="wrap grid_12 content-page">
+	<h2>Frequently Asked Questions</h2>
 
 	<dl class="accordion">
 
@@ -28,7 +28,7 @@ $current_page = get_the_ID();?>
 		<?php endwhile; endif; ?>
 
 	</dl>
-
+</div>
 <?php 
 		
 	$slides = get_field( 'image_quote', $current_page ); 
@@ -44,7 +44,7 @@ $current_page = get_the_ID();?>
 			$bg_img = get_field('background_image', $slide->ID);			
 		?>
 
-			<section data-type="background" data-speed="4"  class="parallax-bg image imageBox" style="background-image: url('<?php echo $bg_img;?>')">
+			<section class="parallax-bg image imageBox" style="background-image: url('<?php echo $bg_img;?>')">
 
 				<div class="captionBox quote">
 				

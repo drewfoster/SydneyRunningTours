@@ -16,9 +16,9 @@
 	<link rel="shortcut icon" href="<?php echo $upload_dir; ?>/2014/03/favicon.png" type="image/x-icon" />
 	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
 	
-	<?php if(is_front_page() || is_page('Locations')) : ?>
+	<?php if(is_front_page() || is_page( 100 )) : ?>
 		<script type="text/javascript"
-	      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANBOp0nle1Ud7D4DtQFW8KRDhX107gy5Y&sensor=false">
+	      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmdJiPopd94g0Nm4DC2DhAd56JFZ8Z2LQ&sensor=false">
 	    </script>
 	<?php endif;?>
 </head>
@@ -38,7 +38,7 @@
 			<ul class="mobile-menu clearfix">
 				<li class="logo">
 					<a href="<?php bloginfo('url'); ?>">                       
-						<img src="<?php echo $upload_dir; ?>/2014/02/srt-logo.png">
+						<img alt="Sydney Running Tours Logo" src="<?php echo $upload_dir; ?>/2014/02/srt-logo.png">
 					</a>
 				</li>
 				<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
